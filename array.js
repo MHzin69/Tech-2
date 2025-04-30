@@ -1,9 +1,19 @@
-let num = [1,2,9,7,6,4,10];
+const prompt = require("prompt-sync")();
+
+let num = [];
 let soma = 0;
 let media = 0;
 
-for (let i = 0; i < 7; i++) {
-    soma = soma + num[i];
+let qtd = Number(prompt("Quantos números você quer somar? "));
+
+for (let i = 0; i < qtd; i++) {
+    num[i] = Number(prompt("Informe o valor da posição " + i + ": "));
+    soma += num[i];
 }
-media = soma / 7;
-console.log(media);
+
+for (let i = 0; i < qtd; i++) {
+    console.log("Posição " + i + " - Valor " + num[i]);
+}
+
+media = soma / qtd;
+console.log("Média: " + media);
